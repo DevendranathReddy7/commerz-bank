@@ -37,10 +37,16 @@ const EachPayee = ({ payee, onClick }) => {
             this payee?
           </p>
           <ButtonsDiv>
-            <ButtonStyles onClick={() => cancelDeletePayee()}>
+            <ButtonStyles
+              onClick={() => cancelDeletePayee()}
+              style={{ width: "50%" }}
+            >
               cancel
             </ButtonStyles>
-            <ButtonStyles onClick={() => deletePayeeConfirm(payee._id)}>
+            <ButtonStyles
+              onClick={() => deletePayeeConfirm(payee._id)}
+              style={{ width: "50%" }}
+            >
               Continue
             </ButtonStyles>
           </ButtonsDiv>

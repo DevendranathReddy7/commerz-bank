@@ -36,15 +36,15 @@ const AddPayee = () => {
   const { state } = useLocation();
   const [selectedRadioButton, setSelectedRadioButton] = useState({
     id:
-      state.editingPayee.transferType === "email"
+      state?.editingPayee?.transferType === "email"
         ? 2
-        : state.editingPayee.transferType === "mobileNumber"
+        : state?.editingPayee?.transferType === "mobileNumber"
         ? 3
         : 1,
     label:
-      state.editingPayee.transferType === "email"
+      state?.editingPayee?.transferType === "email"
         ? "Email"
-        : state.editingPayee.transferType === "mobileNumber"
+        : state?.editingPayee?.transferType === "mobileNumber"
         ? "Mobile Number"
         : "Account Number",
   });
