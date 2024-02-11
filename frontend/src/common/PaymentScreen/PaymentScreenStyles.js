@@ -45,23 +45,46 @@ export const AccountList = styled.li`
   list-style-type: none;
 `;
 
+// export const AccountsModalDiv = styled.div`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 40%;
+//   height: auto;
+//   display: flex;
+//   flex-direction: column;
+//   align-content: center;
+//   background-color: #12141c;
+//   border-radius: 3px;
+//   border-style: none;
+//   color: #0fbfeb;
+//   margin: 10% 5% 10% 36%;
+//   padding: 1% 6%;
+//   font-weight: bold;
+//   border-radius: 3px;
+//   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+//     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+//   overflow-y: auto;
+// `;
+
 export const AccountsModalDiv = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: absolute;
+  top: 0%; /* Adjust as needed */
+  left: 0%; /* Adjust as needed */
   width: 40%;
-  height: auto;
+  max-height: 100%; /* Set maximum height to allow scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center; /* Updated to align-items */
+  justify-content: flex-start; /* Added to center content vertically */
   background-color: #12141c;
   border-radius: 3px;
   border-style: none;
   color: #0fbfeb;
   margin: 10% 5% 10% 36%;
-  padding: 1% 6%;
+  padding: 1% 6% 10% 6%;
   font-weight: bold;
-  border-radius: 3px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 `;
