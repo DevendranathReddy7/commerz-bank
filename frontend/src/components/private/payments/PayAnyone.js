@@ -76,7 +76,6 @@ const PayAnyone = () => {
         isNaN(value) ||
         Number(value) < 0
       ) {
-        console.log("in amoutn--->");
         setAmountError(true);
       } else {
         setAmount((prev) => ({ ...prev, amount: value }));

@@ -134,7 +134,6 @@ const AddPayee = () => {
     setSucess(true);
     await response.json();
   };
-  console.log(payeeDetails);
 
   const SavePayeeDetails = async () => {
     setIsLoading(true);

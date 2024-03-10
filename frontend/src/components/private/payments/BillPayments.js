@@ -75,7 +75,6 @@ const BillPayments = () => {
         isNaN(value) ||
         Number(value) < 0
       ) {
-        console.log("in amoutn--->");
         setError(true);
       } else {
         setAmount((prev) => ({ ...prev, amount: value }));

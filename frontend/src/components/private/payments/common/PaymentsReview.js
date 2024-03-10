@@ -25,7 +25,6 @@ const PaymentsReview = () => {
     default:
       endpoint = "";
   }
-  console.log(pmtDetails);
   const continueHandler = async () => {
     try {
       setIsLoading(true);
