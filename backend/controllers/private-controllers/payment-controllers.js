@@ -97,12 +97,12 @@ const postBillPayment = async (req, res, next) => {
           },
         }
       );
-      fundsTransfer.status = "success";
+      billPayment.status = "success";
       await billPayment.save();
       res.status(201).json(billPayment);
     } catch (err) {
-      fundsTransfer.status = "failed";
-      await fundsTransfer.save();
+      billPayment.status = "failed";
+      await billPayment.save();
 
       res.status(500).json({ message: "Internal Server Error" });
     }
@@ -172,12 +172,12 @@ const postPayAnyonePayment = async (req, res, next) => {
           },
         }
       );
-      fundsTransfer.status = "success";
+      panDocument.status = "success";
       await panDocument.save();
       res.status(201).json(panDocument);
     } catch (err) {
-      fundsTransfer.status = "failed";
-      await fundsTransfer.save();
+      panDocument.status = "failed";
+      await panDocument.save();
 
       res.status(500).json({ message: err });
     }
