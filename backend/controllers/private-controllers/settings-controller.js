@@ -107,25 +107,28 @@ const createPayees = async (req, res, next) => {
 };
 
 const editPayees = async (req, res, next) => {
-  const { billerName, billerCode, billerRef, owner, billerId } = req.body;
-
-  const isPayeeExisting = payeesSchema.find({ _id: billerId });
+  const { ifscCode, owner, payeeName, paymentValue, transferType, payeeId } =
+    req.body;
+  const isPayeeExisting = payeesSchema.find({ _id: payeeId });
   const isUserExisting = payeesSchema.find({ owner: owner });
   if (isUserExisting) {
     try {
-      await billerSchema.findOneAndUpdate(
-        { _id: billerId },
+      await payeesSchema.findOneAndUpdate(
+        { _id: payeeId },
         {
           $set: {
-            billerName: billerName,
-            billerCode: billerCode,
-            billerRef: billerRef,
+            ifscCode,
+            payeeName,
+            paymentValue,
+            transferType,
           },
         },
         { new: true },
         res.status(201).json({ message: "biller updated successfully" })
       );
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
   }
 };
 

@@ -134,11 +134,12 @@ const AddPayee = () => {
     setSucess(true);
     await response.json();
   };
+  console.log(payeeDetails);
 
   const SavePayeeDetails = async () => {
     setIsLoading(true);
     setSucess(false);
-    const response = await fetch("http://localhost:5000/settings/edit-payees", {
+    const response = await fetch("http://localhost:5000/settings/edit-payee", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -147,6 +148,7 @@ const AddPayee = () => {
         paymentValue: payeeDetails.payeeValue,
         ifscCode: payeeDetails.ifscCode,
         owner: payeeDetails.owner,
+        payeeId: state.editingPayee._id,
       }),
     });
     setPayeeDetails({
